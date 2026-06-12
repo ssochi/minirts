@@ -1,0 +1,53 @@
+
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0e12; color: #cfd8e3;
+    font: 12px/1.4 ui-monospace, Menlo, monospace; }
+  #app { position: fixed; inset: 0; }
+  #hud { position: fixed; top: 8px; left: 8px; user-select: none; pointer-events: none; }
+  #hud .panel { background: rgba(10,14,20,.72); border: 1px solid #2a3442; border-radius: 6px;
+    padding: 8px 10px; margin-bottom: 6px; pointer-events: auto; }
+  #hud .red { color: #ff5a52; font-weight: 700; } #hud .blue { color: #4da3ff; font-weight: 700; }
+  #hud button { background:#1b2430; color:#cfd8e3; border:1px solid #2a3442; border-radius:4px;
+    padding:2px 8px; margin-right:4px; cursor:pointer; font:inherit; }
+  #hud button.on { background:#2f4a6b; }
+  #hud input[type=number] { background:#1b2430; color:#cfd8e3; border:1px solid #2a3442;
+    border-radius:4px; padding:2px 4px; width:64px; font:inherit; }
+  #banner { position: fixed; top: 38%; width: 100%; text-align: center; font-size: 42px;
+    font-weight: 800; text-shadow: 0 2px 12px #000; display: none; }
+  #fatal { position: fixed; inset: 0; display: none; place-items: center; background: #0b0e12;
+    font-size: 14px; white-space: pre-wrap; padding: 40px; }
+  /* 暗角:零 GPU 成本的"电影感"压角 */
+  #vignette { position: fixed; inset: 0; pointer-events: none; z-index: 4;
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.30) 100%); }
+  #hud { z-index: 10; } #banner { z-index: 10; }
+  /* 主菜单 */
+  #menu { position: fixed; inset: 0; display: none; place-items: center; z-index: 30;
+    background: linear-gradient(rgba(5,8,13,.55), rgba(5,8,13,.82)); }
+  #menu .wrap { text-align: center; }
+  #menu h1 { font-size: 44px; letter-spacing: 10px; margin: 0 0 6px; color: #e8eef6;
+    text-shadow: 0 4px 24px rgba(0,0,0,.8); }
+  #menu .sub { opacity: .55; margin-bottom: 36px; letter-spacing: 3px; }
+  #menu .cards { display: flex; gap: 24px; justify-content: center; }
+  #menu .card { width: 240px; padding: 26px 22px; border: 1px solid #2a3442; border-radius: 12px;
+    background: rgba(13,18,26,.88); cursor: pointer; transition: all .15s ease;
+    text-align: left; }
+  #menu .card:hover { border-color: #4da3ff; transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(0,0,0,.5); }
+  #menu .card h2 { margin: 0 0 8px; font-size: 18px; color: #cfe3ff; }
+  #menu .card p { margin: 0; opacity: .6; line-height: 1.7; }
+  /* 框选矩形 */
+  #selbox { position: fixed; display: none; border: 1px solid rgba(80,255,140,.9);
+    background: rgba(80,255,140,.10); pointer-events: none; z-index: 6; }
+  /* 操作介绍弹层 */
+  #help { position: fixed; inset: 0; display: none; place-items: center; z-index: 20;
+    background: rgba(4,6,10,.55); }
+  #help .card { background: rgba(13,18,26,.96); border: 1px solid #2a3442; border-radius: 10px;
+    padding: 18px 22px; max-width: 460px; max-height: 80vh; overflow-y: auto; position: relative;
+    box-shadow: 0 12px 48px rgba(0,0,0,.5); }
+  #help h2 { font-size: 13px; margin: 10px 0 6px; color: #8fb4dd; }
+  #help h2:first-of-type { margin-top: 0; }
+  #help table { border-collapse: collapse; width: 100%; }
+  #help td { padding: 3px 6px; border-bottom: 1px solid #1d2632; vertical-align: top; }
+  #help td:first-child { color: #e8d9a0; white-space: nowrap; padding-right: 14px; }
+  #help p { opacity: .75; margin: 10px 0 0; }
+  #help .close { position: absolute; top: 8px; right: 10px; background: none; border: none;
+    color: #cfd8e3; font-size: 18px; cursor: pointer; padding: 0 4px; }
